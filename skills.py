@@ -62,8 +62,9 @@ def print_indexes(my_list):
         2 Volvo
 
     """
-
-    print "Nothing at all"
+    for item in my_list:
+        item_index = my_list.index(item)
+        print "%d %s" % (item_index, item)
 
 
 def long_words(word_list):
