@@ -306,7 +306,18 @@ def join_strings_with_comma(list_of_words):
 
     """
 
-    return ""
+    if len(list_of_words) == 1:
+        joint_string = list_of_words[0]
+        return joint_string
+    else:
+        joint_string = ""
+        for word in list_of_words:
+            if list_of_words.index(word) == 0:
+                joint_string = list_of_words[0]
+            else:
+                joint_string = joint_string + ", " + word
+
+    return joint_string
 
 
 ##############################################################################
