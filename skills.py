@@ -105,8 +105,16 @@ def smallest_int(number_list):
         True
 
     """
+    if len(number_list) == 0:
+        return None
+    else:
+        smallest_int = number_list[0]
 
-    return 100
+        for num in number_list:
+            if num <= smallest_int:
+                smallest_int = num
+
+        return smallest_int
 
 
 def largest_int(number_list):
