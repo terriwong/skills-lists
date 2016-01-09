@@ -203,7 +203,14 @@ def sum_numbers(number_list):
 
     """
 
-    return None
+    if len(number_list) == 0:
+        sum_numbers = 0
+    else:
+        sum_numbers = 0
+        for num in number_list:
+            sum_numbers += num
+
+    return sum_numbers
 
 
 def mult_numbers(number_list):
