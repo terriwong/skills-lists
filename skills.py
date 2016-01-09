@@ -34,7 +34,13 @@ def all_even(number_list):
 
     """
 
-    return ['the wrong thing']
+    all_even_list = []
+
+    for num in number_list:
+        if num % 2 == 0:
+            all_even_list.append(num)
+
+    return all_even_list
 
 
 def print_indexes(my_list):
