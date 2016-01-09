@@ -203,10 +203,11 @@ def sum_numbers(number_list):
 
     """
 
+    sum_numbers = 0
+
     if len(number_list) == 0:
-        sum_numbers = 0
+        return sum_numbers
     else:
-        sum_numbers = 0
         for num in number_list:
             sum_numbers += num
 
