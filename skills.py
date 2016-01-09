@@ -232,8 +232,15 @@ def mult_numbers(number_list):
         1
 
     """
+    mult_numbers = 1
 
-    return None
+    if len(number_list) == 0:
+        return mult_numbers
+    else:
+        for num in number_list:
+            mult_numbers *= num
+
+    return mult_numbers
 
 
 def join_strings(word_list):
