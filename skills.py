@@ -259,8 +259,15 @@ def join_strings(word_list):
 
     """
 
-    return "Not the right thing"
+    join_strings = ""
 
+    if len(word_list) == 0:
+        return join_strings
+    else:
+        for word in word_list:
+            join_strings += word
+
+    return join_strings
 
 def average(number_list):
     """Return the average (mean) of the list of numbers given.
