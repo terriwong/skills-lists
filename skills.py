@@ -64,7 +64,7 @@ def print_indexes(my_list):
     """
     for item in my_list:
         item_index = my_list.index(item)
-        print "%d %s" % (item_index, item)
+        print "%d %s" % (item_index, item) 
 
 
 def long_words(word_list):
@@ -77,8 +77,13 @@ def long_words(word_list):
         []
 
     """
+    long_words_list = []
 
-    return ['the wrong thing']
+    for word in word_list:
+        if len(word) > 4:
+            long_words_list.append(word)         
+    
+    return long_words_list
 
 
 def smallest_int(number_list):
