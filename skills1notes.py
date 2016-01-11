@@ -165,19 +165,27 @@ def largest_int(number_list):
 
     """
 
-    if len(number_list) == 0:
-        return None
-    else:
-        largest_int = number_list[0]
-        for num in number_list:
-            if num >= largest_int:
-                largest_int = num
-        return largest_int
+    # if len(number_list) == 0:
+    #     return None
+    # else:
+    #     largest_int = number_list[0]
+    #     for num in number_list:
+    #         if num >= largest_int:
+    #             largest_int = num
+    #     return largest_int
 
     # ************************************************* #
     # NOTES FROM HB
     # Same as previous problem
     # ************************************************* #
+
+    largest = None
+
+    for num in number_list:
+        if num > largest or largest == None:
+            largest = num
+
+    return largest
 
 
 def halvesies(number_list):
@@ -192,23 +200,35 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
-    halvesies_list = []
+    # halvesies_list = []
 
-    for num in number_list:
-        if num % 2 == 0:
-            half_num = float(num / 2)
-        else:
-            half_num = float(num / 2) + 0.5
+    # for num in number_list:
+    #     if num % 2 == 0:
+    #         half_num = float(num / 2)
+    #     else:
+    #         half_num = float(num / 2) + 0.5
 
-        halvesies_list.append(half_num)
+    #     halvesies_list.append(half_num)
 
-    return halvesies_list
+    # return halvesies_list
 
     # ************************************************* #
     # NOTES FROM HB
     # This problem is possible without the if/else or the floats
     # Try to implement a solution like that.
     # ************************************************* #
+
+    # Some tests in Python
+    # float(2/2)>>>1.0
+    # float(1/2)>>>0.0
+    # float(1/2.0)>>>0.5
+
+    halvesies_list = []
+
+    for num in number_list:
+        halvesies_list.append(num / 2.0)
+
+    return halvesies_list
 
 
 def word_lengths(word_list):
@@ -244,20 +264,29 @@ def sum_numbers(number_list):
 
     """
 
-    sum_numbers = 0
+    # FIRST VERSION
+    #
+    # sum_numbers = 0
 
-    if len(number_list) == 0:
-        return sum_numbers
-    else:
-        for num in number_list:
-            sum_numbers += num
+    # if len(number_list) == 0:
+    #     return sum_numbers
+    # else:
+    #     for num in number_list:
+    #         sum_numbers += num
 
-    return sum_numbers
+    # return sum_numbers
 
     # ************************************************* #
     # NOTES FROM HB
     # Can you implement a solution without the if/else?
     # ************************************************* #
+
+    sum_numbers = 0
+
+    for num in number_list:
+        sum_numbers += num
+
+    return sum_numbers
 
 
 def mult_numbers(number_list):
@@ -278,20 +307,29 @@ def mult_numbers(number_list):
         1
 
     """
-    mult_numbers = 1
+    # FIRST VERSION
 
-    if len(number_list) == 0:
-        return mult_numbers
-    else:
-        for num in number_list:
-            mult_numbers *= num
+    # mult_numbers = 1
 
-    return mult_numbers
+    # if len(number_list) == 0:
+    #     return mult_numbers
+    # else:
+    #     for num in number_list:
+    #         mult_numbers *= num
+
+    # return mult_numbers
 
     # ************************************************* #
     # NOTES FROM HB
     # Can you implement a solution without the if/else?
     # ************************************************* #
+
+    mult_numbers = 1
+
+    for num in number_list:
+        mult_numbers *= num
+
+    return mult_numbers
 
 
 def join_strings(word_list):
@@ -310,15 +348,17 @@ def join_strings(word_list):
 
     """
 
-    join_strings = ""
+    # FIRST VERSION
+    #
+    # join_strings = ""
 
-    if len(word_list) == 0:
-        return join_strings
-    else:
-        for word in word_list:
-            join_strings += word
+    # if len(word_list) == 0:
+    #     return join_strings
+    # else:
+    #     for word in word_list:
+    #         join_strings += word
 
-    return join_strings
+    # return join_strings
 
     # ************************************************* #
     # NOTES FROM HB
@@ -326,6 +366,13 @@ def join_strings(word_list):
     # simplify this solution?
     # Do you need an if/else?
     # ************************************************* #
+
+    join_strings = ""
+
+    for word in word_list:
+        join_strings += word
+
+    return join_strings
 
 
 def average(number_list):
@@ -338,23 +385,29 @@ def average(number_list):
     this raises an error when given an empty list.
     """
 
-    sum_all = 0
-    num_count = 0
+    # FIRST VERSION
 
-    for num in number_list:
-        num = float(num)
-        sum_all += num
-        num_count += 1
+    # sum_all = 0
+    # num_count = 0
 
-    average = sum_all / num_count
+    # for num in number_list:
+    #     num = float(num)
+    #     sum_all += num
+    #     num_count += 1
 
-    return average
+    # average = sum_all / num_count
+
+    # return average
 
     # ************************************************* #
     # NOTES FROM HB
     # Can you implement a solution without a counter?
     # There's a built in python function that can help
     # ************************************************* #
+
+    average = float(sum_numbers(number_list)) / len(number_list)
+
+    return average
 
 
 def join_strings_with_comma(list_of_words):
